@@ -1,0 +1,8 @@
+defaults: &defaults
+  adapter: mysql
+  host: localhost
+  username: root
+
+development:
+  database: datamapper_bugs_development
+  <<: *defaults
