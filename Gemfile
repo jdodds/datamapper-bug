@@ -1,15 +1,16 @@
 source 'http://rubygems.org'
 
-RAILS_VERSION = '~> 3.0.10'
-DM_VERSION    = '~> 1.1.0'
+RAILS_VERSION = '~> 3.1.0'
 
 gem 'activesupport',      RAILS_VERSION, :require => 'active_support'
 gem 'actionpack',         RAILS_VERSION, :require => 'action_pack'
 gem 'actionmailer',       RAILS_VERSION, :require => 'action_mailer'
 gem 'railties',           RAILS_VERSION, :require => 'rails'
 
-gem 'dm-rails',          '~> 1.1.0'
-gem 'dm-sqlite-adapter', DM_VERSION
+gem 'dm-rails',          :git => 'git://github.com/datamapper/dm-rails.git'
+gem 'dm-active_model', :git => 'git://github.com/datamapper/dm-active_model.git'
+
+gem 'dm-sqlite-adapter', :git => 'git://github.com/datamapper/dm-sqlite-adapter.git'
 
 # You can use any of the other available database adapters.
 # This is only a small excerpt of the list of all available adapters
@@ -26,18 +27,22 @@ gem 'dm-sqlite-adapter', DM_VERSION
 # gem 'dm-oracle-adapter',    DM_VERSION
 # gem 'dm-sqlserver-adapter', DM_VERSION
 
-gem 'dm-migrations',        DM_VERSION
-gem 'dm-types',             DM_VERSION
-gem 'dm-validations',       DM_VERSION
-gem 'dm-constraints',       DM_VERSION
-gem 'dm-transactions',      DM_VERSION
-gem 'dm-aggregates',        DM_VERSION
-gem 'dm-timestamps',        DM_VERSION
-gem 'dm-observer',          DM_VERSION
+gem 'dm-core', :git => 'git://github.com/datamapper/dm-core.git'
+gem 'dm-migrations', :git => 'git://github.com/datamapper/dm-migrations.git'
+gem 'dm-types', :git => 'git://github.com/datamapper/dm-types.git'
+gem 'dm-validations', :git => 'git://github.com/datamapper/dm-validations.git'
+gem 'dm-constraints', :git => 'git://github.com/datamapper/dm-constraints.git'
+gem 'dm-transactions', :git => 'git://github.com/datamapper/dm-transactions.git'
+gem 'dm-aggregates', :git => 'git://github.com/datamapper/dm-aggregates.git'
+gem 'dm-timestamps', :git => 'git://github.com/datamapper/dm-timestamps.git'
+gem 'dm-observer', :git => 'git://github.com/datamapper/dm-observer.git'
+
+gem 'tzinfo'
 
 group(:development, :test) do
   gem 'mysql2'
-  gem 'dm-mysql-adapter'
+  gem 'dm-do-adapter', :git => 'git://github.com/datamapper/dm-do-adapter.git'
+  gem 'dm-mysql-adapter', :git => 'git://github.com/datamapper/dm-mysql-adapter.git'
 
   # Uncomment this if you want to use rspec for testing your application
 
